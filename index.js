@@ -56,11 +56,13 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
-
-    /*Code Here*/
-
+function inning(){
+  for (let i = 0; i <=2; i++) {
+    let randomNum = Math.round(Math.random());
+    return randomNum;
+  }
 }
+inning();
 
 /* Task 3: finalScore()
 
@@ -76,11 +78,19 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
-
-  /*Code Here*/
-
+function finalScore(callback, inningNum){
+  let homeScore = 0;
+  let awayScore = 0;
+   for (let i = 0; i < inningNum; i++){
+    homeScore += callback()
+    awayScore += callback()
+   }
+    return {
+      "Home": homeScore,
+      "Away": awayScore
+  };
 }
+console.log(finalScore(inning, 9));
 
 /* Task 4: 
 
@@ -104,8 +114,33 @@ and returns the score at each pont in the game, like so:
 
 Final Score: awayTeam - homeTeam */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(callback, inningNum){
+  //const eachScore = [];
+  let homeTeam = 0;
+  let awayTeam = 0;
+   for (let i = 0; i < inningNum; i++){
+     homeTeam += callback()
+     awayTeam += callback()
+    //eachScore.push({homeTeam:homeScore, awayTeam:awayScore});
+    if (i===0){
+    console.log(`1st inning: awayTeam:${awayTeam} - homeTeam:${homeTeam}`);
+  } if (i===1){
+    console.log(`2nd inning: awayTeam:${awayTeam} - homeTeam:${homeTeam}`);
+  } if (i===2){
+    console.log(`3rd inning: awayTeam:${awayTeam} - homeTeam:${homeTeam}`);
+  } if (i===3){
+    console.log(`4st inning: awayTeam:${awayTeam} - homeTeam:${homeTeam}`);
+  } if (i===4){
+    console.log(`5st inning: awayTeam:${awayTeam} - homeTeam:${homeTeam}`);
+  } if (i===5){
+    console.log(`6st inning: awayTeam:${awayTeam} - homeTeam:${homeTeam}`);
+  } if (i===6){
+    console.log(`7st inning: awayTeam:${awayTeam} - homeTeam:${homeTeam}`);
+  } if (i===7){
+    console.log(`8st inning: awayTeam:${awayTeam} - homeTeam:${homeTeam}`);
+  } if (i===8){
+    console.log(`9st inning: awayTeam:${awayTeam} - homeTeam:${homeTeam}`);
+  } 
 }
-
-
+}
+scoreboard(inning, 9);

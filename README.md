@@ -67,10 +67,14 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
-
+  Closure is used in line 60 and 62. Returning the result allow the data can get out the function scope and allow variable to get through the data to use outside the fuction scope.
 
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+  Calling 'dansRoll' will return statement "name + rolled a + newRoll, which name will stay the same as it is assigned as 'Dan' but 'newRoll' will change since it is assigned as a random number.
+
 c. What is the lexical scope of `newRoll`? 
+  'newRoll' in line 56 is a result of a variable that is defined inside anonymous function (which is an inner function inside 'personalDice' function) so it can be reach within this function scope but can not be called outside this function.
+
 
 ### Task 3 - Stretch Goals
 
